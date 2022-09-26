@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masalah Variable Var</title>
+  </head>
+  <body>
+    <script>
+      // Var tidak memiliki block scope
+
+      //   // global scope
+      //   let i = 20;
+
+      //   // tidak akan menyebabkan error dan tidak akan mengubah nilai datanya jika kita membuat suatu variable yang sama di scope yang berbeda
+      //   for (let i = 0; i < 10; i++) {
+      //     // local scope
+      //     console.info(`Local ${i}`);
+      //   }
+
+      //   // nilai i akan tetap 20
+      //   console.info(`Global ${i}`);
+
+      // Masalah pada var
+
+      var i = 20;
+
+      // variable yang sama mengubah nilai data padahal scope nya beda
+      for (var i = 0; i < 10; i++) {
+        // local scope
+        console.info(`Local ${i}`);
+      }
+      // nilai global var akan jadi 10 karna dia ke-ovveride oleh variable yang ada dilocal scope
+      console.info(`Global ${i}`);
+    </script>
+  </body>
+</html>

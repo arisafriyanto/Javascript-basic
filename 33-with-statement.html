@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With Statement</title>
+  </head>
+  <body>
+    <script>
+      // not with statement
+      //   const person = {
+      //     firstName: "Aris",
+      //     lastName: "Afriyanto",
+      //     address: "Indonesia",
+      //   };
+
+      //   console.log(person.firstName);
+      //   console.log(person.lastName);
+      //   console.log(person.address);
+
+      // with statement
+
+      const person = {
+        firstName: "Aris",
+        lastName: "Afriyanto",
+        address: "Indonesia",
+      };
+
+      // ambigu with statement
+      let firstName = "Mike";
+      let lastName = "Tyson";
+      let address = "USA";
+
+      with (person) {
+        console.log(firstName); // niatnya ingin Mike
+        console.log(lastName); // niatnya ingin Tyson
+        console.log(address); // niatnya ingin USA
+      }
+    </script>
+  </body>
+</html>

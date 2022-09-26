@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Sebagai Value</title>
+  </head>
+  <body>
+    <script>
+      function sayHello(name) {
+        document.writeln(`<p>Hello, ${name}</p>`);
+      }
+
+      // jika kita kasih sayHello() berarti kita panggil function
+      // function di variabel
+      let say = sayHello;
+      sayHello("Aris");
+      say("Afriyan");
+
+      // function di parameter
+
+      function giveMeName(callback) {
+        callback("Mike"); // sayHello("Mike")
+      }
+
+      // jika kita kasih sayHello() berarti kita panggil function, tanpa () kita kirim
+      giveMeName(sayHello);
+      //   giveMeName(say); // giveMeName(sayHello)
+    </script>
+  </body>
+</html>

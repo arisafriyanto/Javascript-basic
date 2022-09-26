@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope</title>
+  </head>
+  <body>
+    <script>
+      //global scope
+      let counter = 0;
+
+      // global scope
+      function hitMe() {
+        // local scope hitMe
+        counter++;
+      }
+
+      // global scope
+      function other() {
+        // local scope other
+      }
+
+      hitMe();
+      hitMe();
+      hitMe();
+
+      console.info(counter);
+
+      // local scope tidak bisa diakses diglobal scope
+      // global scope bisa diakses dilocal scope
+
+      function first() {
+        // local scope first
+        let firstVariabel = "First";
+      }
+
+      function second() {
+        // local scope second
+        let secondVariabel = "Second";
+        // console.info(firstVariabel); // error
+      }
+
+      first();
+      second();
+
+      // global scope
+      // console.info(firstVariabel); // error
+      // console.info(secondVariabel); // error
+
+      // nested function scope
+      function third() {
+        let thirdVariable = "Third";
+
+        // nested function adalah function didalam function (fungsi bersarang)
+        function fourth() {
+          let fourthVariable = "Fourth";
+          console.info(thirdVariable);
+        }
+
+        // console.info(fourthVariable); // error
+        fourth();
+      }
+
+      third();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipe Data Object</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "Aris Afriyanto",
+        address: "Indonesia",
+        "address now": "Brebes",
+        age: 21,
+      };
+
+      // ubah property/attribute
+      //   person["name"] = "Aris Afriyanto";
+      //   person["address"] = "Indonesia";
+      //   person["age"] = 21;
+
+      //   delete person["age"];
+
+      console.table(person);
+
+      console.info(`Name: ${person.name}`);
+      console.info(`Address: ${person.address}`);
+      console.info(`Address: ${person["address now"]}`);
+      console.info(`Age: ${person.age}`);
+    </script>
+  </body>
+</html>

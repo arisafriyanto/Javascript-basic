@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+  </head>
+  <body>
+    <script>
+      // Map layaknya object yang membedakan Map memperbolehkan key tipe data apapun
+
+      // create map, untuk memberi nilai langsun gunakan array multidimensi
+      const myMap = new Map([
+        ["1", "this is one"],
+        // key    value
+        [1, "this is first"],
+        [true, true],
+      ]);
+      console.info(myMap);
+
+      // create map
+      const capital = new Map([
+        ["Jakarta", "Indonesia"],
+        ["Tokyo", "Japan"],
+        ["London", "England"],
+      ]);
+
+      console.info(capital.size);
+      console.info(capital);
+      console.info(capital.get("Jakarta")); // get ambil secara spesifik berdasarkn key
+      capital.set("Delhi", "India"); // set menambah data di map
+      console.info(capital);
+      console.info(capital.size);
+      console.info(capital.get("Delhi"));
+
+      // add and get tidak dirokemndasikan, data tidak akan tersimpan di map query jadi gk bsa pake method" map
+      capital["Kuala Lumpur"] = "Malaysia";
+      console.info(capital["Kuala Lumpur"]);
+    </script>
+  </body>
+</html>

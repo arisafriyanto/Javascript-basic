@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This & Anonymous Function DiObject</title>
+  </head>
+  <body>
+    <script>
+      // this di global scope
+      //   console.info(this); // referensi ke global object window browser
+
+      // this di function global
+      //   function sample() {
+      //     console.info(this); // referensi ke global object window browser
+      //   }
+      //   sample();
+
+      // this di nested function
+      //   function example() {
+      //     console.info(this);
+
+      //     function inner() {
+      //       console.info(this); // referensi ke global object window browser
+      //     }
+
+      //     return inner();
+      //   }
+
+      //   example();
+
+      // dalam object method this adalah referensi ke object milik sendiri / keobject pemilik functionnya
+
+      const person = {
+        name: "Afriyan",
+        sayHello: function (value) {
+          console.info(`Hello, ${value}. My name is ${this.name}`);
+        },
+      };
+
+      person.sayHello("Aris");
+    </script>
+  </body>
+</html>

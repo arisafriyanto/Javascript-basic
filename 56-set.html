@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set</title>
+  </head>
+  <body>
+    <script>
+      /*
+            Hal yang membedakan Set dengan struktur data yang lain adalah data pada Set tidak berurutan dan juga tidak diindeks. Selain 
+            itu, data di dalam Set juga bersifat unik dan tidak ada duplikasi.
+        */
+
+      const data = new Set([1, 2, 6, 6, 2, 10, 10]);
+      console.info(data);
+      // add data to set
+      data.add(11);
+      console.info(data);
+
+      // delete data to set
+      data.delete(10);
+      console.info(data);
+    </script>
+  </body>
+</html>

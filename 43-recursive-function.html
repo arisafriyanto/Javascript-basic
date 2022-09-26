@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursive Function</title>
+  </head>
+  <body>
+    <script>
+      // Recursive adalah function yang memanggil dirinya sendiri
+      // factorial itu misal kita kasih value 5 maka 1 x 2 x 3 x 4 x 5
+
+      // factorial not recursive
+      function factorial(value) {
+        let result = 1;
+        for (let i = 1; i <= value; i++) {
+          result *= i;
+        }
+        return result;
+      }
+
+      console.info(factorial(6));
+      console.info(1 * 2 * 3 * 4 * 5 * 6);
+
+      // factorial with recursive
+      // 6 * 5 * 4 * 3 * 2 * 1
+
+      function factorialRecursive(value) {
+        // value jadi 5
+        // jika gunakan recursive kita bikin terminate supaya kondisinya gk true terus
+        if (value === 1) {
+          return 1;
+        } else {
+          return value * factorialRecursive(value - 1);
+          //       6   *                         5
+          //       5   *                         4
+          //       4   *                         3
+          //       3   *                         2
+          //       2   *                         1
+        }
+      }
+
+      console.info(factorialRecursive(5));
+
+      //   factorialRecursive(5);
+      // cara kerja
+      // 5 * factorialRecursive(4)
+      // 5 * 4 * factorialRecursive(3)
+      // 5 * 4 * 3 * factorialRecursive(2)
+      // 5 * 4 * 3 * 2 * factorialRecursive(1)
+      // 5 * 4 * 3 * 2 * 1
+
+      // looping with recursive
+      function countDown(number) {
+        if (number === 0) {
+          return;
+        }
+
+        console.info(number);
+        countDown(number - 1);
+      }
+
+      countDown(10);
+    </script>
+  </body>
+</html>

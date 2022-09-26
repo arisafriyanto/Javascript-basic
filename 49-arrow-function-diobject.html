@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function Di Object</title>
+  </head>
+  <body>
+    <script>
+      // arrow function kata kunci this bukan mengacu pada objectnya sendiri
+      // tpi mengacu pada object window browser
+
+      const person = {
+        name: "Afriyan",
+        sayHello: (name) => {
+          console.info(this); // mengacu pada window
+          console.info(`Hello ${name}`);
+        },
+      };
+
+      person.sayHello("Budi");
+    </script>
+  </body>
+</html>

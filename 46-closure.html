@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body>
+    <script>
+      function createAdder(value) {
+        const owner = "Afriyan";
+
+        function add(param) {
+          console.info(owner);
+          return value + param;
+        }
+
+        return add; // kirim add bukan panggil add()
+      }
+
+      // kita bisa expose function dan variable pendukungnya keluar dari scope yang semestinya/ke global scope inilah closure
+
+      const addTwo = createAdder(2);
+      console.info(addTwo(10));
+
+      //   function addTwo(param) {
+      //     console.info("Afriyan");
+      //     return 2 + param;
+      //   }
+
+      const addThree = createAdder(3); // 3 diambil dari value
+      console.info(addThree(20));
+
+      //   function addTwo(param) {
+      //     console.info("Afriyan"); // diambil dari owner
+      //     return 3 + param;
+      //   }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Parameter</title>
+  </head>
+  <body>
+    <script>
+      // rest parameter hanya boleh di belakang diparameter dan hanya satu rest parameter pada function
+      // rest parameter menampung parameter sebanyak apapun
+      function sum(fruit, ...data) {
+        let total = 0;
+        for (let num of data) {
+          total += num;
+        }
+        document.writeln(`<p>Total ${fruit} ${total}</p>`);
+      }
+
+      sum("Apels", 19, 20, 30, 40, 30);
+      sum("Orange", 19, 20, 120, 40, 30);
+      sum("Grape", ...[19, 20, 36, 20, 80]);
+
+      const array = [10, 29, 39, 90, 88];
+      const fruit = "Water Melon";
+
+      sum(fruit, ...array);
+
+      // sebelum ada rest pake arguments object tetapi sekarang tidak direkomendasikan
+      // parameter tidak bisa ditentukan
+      function oldSum() {
+        let total = 0;
+        for (let item of arguments) {
+          total += item;
+        }
+
+        console.info(`Total ${total}`);
+      }
+
+      oldSum(1, 2, 4, 76, 4, 6, 4, 6);
+    </script>
+  </body>
+</html>

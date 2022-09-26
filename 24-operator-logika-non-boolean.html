@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator logika di non boolean</title>
+  </head>
+  <body>
+    <script>
+      console.log("LOGIKA OR");
+      console.info("hello" || "");
+      console.info(`` || "haii");
+      console.info(false || []);
+      console.info("0" || "false");
+      console.info(0 || "NOL");
+      console.info(true || "false");
+      console.info(null || "NULL");
+      console.info(undefined || "UNDEFINED");
+
+      const person = {
+        firstName: "Aris",
+        lastName: "Afriyanto",
+      };
+
+      const name = person.firstName || person.lastName;
+      console.info(name);
+
+      // Logika AND
+      console.warn("LOGIKA AND");
+      console.info(0 && "");
+      console.info(false && 0);
+      console.info("false" && "NOL");
+      console.info(null && undefined);
+      console.info("undefined" && null);
+    </script>
+  </body>
+</html>

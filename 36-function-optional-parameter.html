@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Optional Parameter</title>
+  </head>
+  <body>
+    <script>
+      // parameter di function js optional
+      function sayHello(firtsName, lastName) {
+        console.log(firtsName);
+        console.log(lastName);
+      }
+
+      sayHello("Afriyan"); // kurang satu dan nilai terakhir undefined dan tidak error
+      sayHello("Aris", "Afriyanto"); // okey parameter terisi semua
+      sayHello("Aris", "Afriyanto", "Mike"); // nilai melebihi parameter akan diabaikan
+    </script>
+  </body>
+</html>

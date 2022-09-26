@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      // destructuring array
+      // membedakan scope dengan {}
+      {
+        const hobbys = [
+          "Makan",
+          "Minum",
+          "Programming",
+          "Game",
+          "Maniac",
+          "Ngops",
+        ];
+
+        // not destructuring array
+        //   const firstHobby = hobbys[0];
+        //   const secondHobby = hobbys[1];
+        //   const thirdHobby = hobbys[2];
+        //   const fourthHobby = hobbys[3];
+
+        // acuannya index
+        const [firstHobby, secondHobby, thirdHobby, ...others] = hobbys;
+
+        console.info(firstHobby);
+        console.info(secondHobby);
+        console.info(thirdHobby);
+        console.info(others);
+      }
+
+      // descturcutring object
+      {
+        const person = {
+          firstName: "Aris",
+          lastName: "Afriyanto",
+          // nested object atau object bersarang
+          address: {
+            street: "Jl Kenangan kita",
+            city: "Brebes",
+            country: "Indonesia",
+          },
+          hobby: "Game",
+          school: "STMIK",
+        };
+
+        const {
+          firstName,
+          lastName,
+          address: { street, city, country },
+          ...others
+        } = person;
+        console.info(firstName);
+        console.info(lastName);
+        // console.info(address);
+        // dan sekarang address is not defined, karena kita sudah akses data didalamnya
+        console.info(street);
+        console.info(city);
+        console.info(country);
+        console.info(others);
+      }
+
+      // destructuring di parameter bisa untuk object
+      {
+        // daripada langsung akses objectnya mending akses property diobjectnya
+        // person
+        function displayPerson({ firstName, middleName, lastName }) {
+          //   console.info(person.firstName);
+          console.info(firstName);
+          console.info(middleName);
+          console.info(lastName);
+        }
+
+        const person = {
+          firstName: "Aris",
+          middleName: "Afri",
+          lastName: "Yanto",
+        };
+
+        displayPerson(person);
+      }
+
+      // destructuring di parameter bisa untuk array
+      {
+        function displayName([firstName, lastName]) {
+          console.info(firstName);
+          console.info(lastName);
+        }
+
+        const names = ["Aris", "Afriyanto"];
+
+        displayName(names);
+
+        function sum([first, second]) {
+          return first * second;
+        }
+
+        console.info(sum([10, 20]));
+      }
+
+      // default value descturcutring array
+      {
+        const names = ["Aris", "Afriyan"];
+        // default value untuk lastName, jika data diarray names ada maka data diarray names yang akan digunakan
+        const [firstName, middleName, lastName = "Fast"] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      // default value descturcutring object
+      {
+        const person = {
+          firstName: "Aris",
+          middleName: "Mike",
+          lastName: "Fast",
+        };
+
+        const { firstName, middleName = "Afriyan", lastName } = person;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      // descturcutring object cara aksesnya kita harus samakan variable yang kita buat sesuai property diobjectnya, tetapi sebenarnya jika kita mau kita bisa mengganti nama variable lain
+      {
+        const person = {
+          firstName: "Aris",
+          middleName: "Mike",
+          lastName: "Fast",
+        };
+
+        const {
+          firstName: namaDepan,
+          middleName: namaTengah = "Afriyan",
+          lastName: namaBelakang,
+        } = person;
+
+        // jika kita akses firstName sekarang error karena kita udah ganti propertynya menjadi namaDepan dipemanggilan propertynya
+        console.info(namaDepan);
+        console.info(namaTengah);
+        console.info(namaBelakang);
+      }
+    </script>
+  </body>
+</html>

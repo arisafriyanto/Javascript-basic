@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>In Operator</title>
+  </head>
+  <body>
+    <script>
+      // in operator, hanya mengecek property/index itu ada tidak perduli dengan valuenya, contoh null/undefined maka akan tetap dianggap ada
+
+      // in object
+      const person = {
+        firstName: "Aris",
+        middleName: undefined,
+        lastName: "Afriyanto",
+      };
+
+      if ("firstName" in person) {
+        document.writeln(`<p>${person.firstName}</p>`);
+      }
+
+      if ("middleName" in person) {
+        document.writeln(`<p>Hello, ${person.middleName}</p>`);
+      } else {
+        document.writeln(`<p>Hello Person</p>`);
+      }
+
+      // in array
+      const hobby = ["makan", "minum"];
+      const hasil = "mandi" in hobby;
+      document.writeln(`<p>${hasil}</p>`);
+
+      const names = [null, "afriyan", null];
+      const result = 0 in names;
+      document.writeln(`<p>${result}</p>`);
+    </script>
+  </body>
+</html>
